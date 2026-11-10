@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Dojo — Manage your martial arts dojo</title>
+  <meta name="description" content="My Dojo: manage members, grades, lesson calendar, attendance, fees, exam eligibility and a technical glossary. Local-first, with optional encrypted cloud sync." />
+  <meta property="og:title" content="My Dojo" />
+  <meta property="og:description" content="Manage members, grades, attendance, fees, exams and glossary for your dojo." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --brand: #2E5D4B;
+      --brand-light: #cfe3d8;
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --muted: #666;
+      --card: #f3f8f5;
+      --border: rgba(46,93,75,0.25);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --brand: #7fc3a6; --bg: #0f1512; --fg: #eaeaea; --muted: #9a9a9a; --card: #16211c; }
+    }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; margin: 0; background: var(--bg); color: var(--fg); line-height: 1.6; }
+    a { color: var(--brand); }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 1.25rem; }
+    .lang { text-align: right; padding: 0.75rem 1.25rem 0; font-size: 0.9rem; }
+    header { text-align: center; padding: 2.5rem 1.25rem; }
+    header img.icon { width: 112px; height: 112px; border-radius: 24px; box-shadow: 0 6px 24px rgba(46,93,75,0.3); }
+    header h1 { font-size: 2.4rem; margin: 1rem 0 0.25rem; letter-spacing: -0.02em; }
+    header p.tagline { font-size: 1.2rem; color: var(--muted); margin: 0 auto; max-width: 600px; }
+    section { padding: 2.25rem 0; }
+    section h2 { font-size: 1.5rem; margin: 0 0 1.25rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; }
+    .card h3 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .shots { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .shots figure { margin: 0; width: 260px; max-width: 46%; }
+    .shots img { width: 100%; border-radius: 16px; border: 1px solid var(--border); }
+    .shots figcaption { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 0.4rem; }
+    ol.steps { padding-left: 1.2rem; } ol.steps li { margin: 0.5rem 0; }
+    .note { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.4rem; }
+    .note ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+    footer { text-align: center; padding: 2.5rem 1.25rem 3.5rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <div class="lang"><strong>EN</strong> · <a href="index.it.html">IT</a></div>
+  <header>
+    <div class="wrap">
+      <img class="icon" src="assets/icon.png" alt="My Dojo icon" />
+      <h1>My Dojo</h1>
+      <p class="tagline">Run your martial arts dojo: members, grades, attendance, fees, exams and a technical glossary — all in one app.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>What it does</h2>
+      <p>
+        My Dojo is a native Android app (Kotlin / Jetpack Compose) for managing
+        a martial arts dojo — Aikido, Judo, Karate and more. It keeps your
+        members, their grades and attendance, membership fees, exam eligibility
+        and a searchable technical glossary in one place. Local-first, with
+        optional encrypted cloud sync for instructors and collaborators.
+      </p>
+    </section>
+
+    <section>
+      <h2>Features</h2>
+      <div class="grid">
+        <div class="card"><h3>Members &amp; grades</h3><p>Full member records (contacts, guardian for minors), kyu/dan belt catalog with colors, medical-certificate expiry and current-grade date.</p></div>
+        <div class="card"><h3>Calendar &amp; attendance</h3><p>Monthly view and event list, regular lessons and extra events (seminars/stages), auto-generated from the weekly schedule, with an attendance register.</p></div>
+        <div class="card"><h3>Payments</h3><p>Monthly and yearly fees with automatic due-date calculation and reminders for outstanding fees.</p></div>
+        <div class="card"><h3>Exam eligibility</h3><p>An eligibility engine based on attendance (lessons + seminars) and time since the last grade, with admin-configurable thresholds and syllabus (plus video links).</p></div>
+        <div class="card"><h3>Glossary</h3><p>A dictionary of terms (term, kanji, meaning, optional link) with instant search and expandable cards.</p></div>
+        <div class="card"><h3>Bilingual &amp; secure</h3><p>Full Italian/English UI. Hardware-backed Keystore, field-level AES-256-GCM encryption, and tenant isolation (RLS) for cloud sync.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Screenshots</h2>
+      <div class="shots">
+        <figure>
+          <img src="screenshots/01-onboarding.png" alt="Welcome / set up your dojo" />
+          <figcaption>Welcome — set up your dojo</figcaption>
+        </figure>
+        <figure>
+          <img src="screenshots/02-setup.png" alt="Dojo information: name, logo, discipline, theme" />
+          <figcaption>Dojo information: name, logo, discipline, theme</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Get started</h2>
+      <ol class="steps">
+        <li>Open My Dojo and tap <strong>Create a new dojo</strong> (or join an existing one).</li>
+        <li>Enter the dojo name, pick the discipline, optionally add a logo and theme colors.</li>
+        <li>Add your members with their grades, contacts and medical-certificate dates.</li>
+        <li>Set up the weekly schedule; lessons and attendance are generated for the calendar.</li>
+        <li>Track fees and check exam eligibility as members train.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Privacy &amp; security</h2>
+      <div class="note">
+        <ul>
+          <li>Local-first: all data belongs to the dojo administrator. No analytics, no ads, no tracking.</li>
+          <li>Sensitive fields (emails, phones, guardian contacts, notes) are encrypted client-side with AES-256-GCM.</li>
+          <li>Optional cloud sync (Supabase) over HTTPS/TLS with row-level security and signed JWT claims.</li>
+          <li>Medical certificates: only the expiry date is tracked, never diagnoses or health records.</li>
+        </ul>
+        <p style="margin-top:1rem;"><a href="privacy.html">Read the full privacy policy</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a href="privacy.html">Privacy Policy</a>
+      <p>&copy; My Dojo</p>
+    </div>
+  </footer>
+</body>
+</html>
