@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Dojo — Gestisci il tuo dojo di arti marziali</title>
+  <meta name="description" content="My Dojo: gestisci allievi, gradi, calendario lezioni, presenze, quote, idoneità agli esami e glossario tecnico. Local-first, con sincronizzazione cloud cifrata opzionale." />
+  <meta property="og:title" content="My Dojo" />
+  <meta property="og:description" content="Gestisci allievi, gradi, presenze, quote, esami e glossario del tuo dojo." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --brand: #2E5D4B;
+      --brand-light: #cfe3d8;
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --muted: #666;
+      --card: #f3f8f5;
+      --border: rgba(46,93,75,0.25);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --brand: #7fc3a6; --bg: #0f1512; --fg: #eaeaea; --muted: #9a9a9a; --card: #16211c; }
+    }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; margin: 0; background: var(--bg); color: var(--fg); line-height: 1.6; }
+    a { color: var(--brand); }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 1.25rem; }
+    .lang { text-align: right; padding: 0.75rem 1.25rem 0; font-size: 0.9rem; }
+    header { text-align: center; padding: 2.5rem 1.25rem; }
+    header img.icon { width: 112px; height: 112px; border-radius: 24px; box-shadow: 0 6px 24px rgba(46,93,75,0.3); }
+    header h1 { font-size: 2.4rem; margin: 1rem 0 0.25rem; letter-spacing: -0.02em; }
+    header p.tagline { font-size: 1.2rem; color: var(--muted); margin: 0 auto; max-width: 600px; }
+    section { padding: 2.25rem 0; }
+    section h2 { font-size: 1.5rem; margin: 0 0 1.25rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; }
+    .card h3 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .shots { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .shots figure { margin: 0; width: 260px; max-width: 46%; }
+    .shots img { width: 100%; border-radius: 16px; border: 1px solid var(--border); }
+    .shots figcaption { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 0.4rem; }
+    ol.steps { padding-left: 1.2rem; } ol.steps li { margin: 0.5rem 0; }
+    .note { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.4rem; }
+    .note ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+    footer { text-align: center; padding: 2.5rem 1.25rem 3.5rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <div class="lang"><a href="index.html">EN</a> · <strong>IT</strong></div>
+  <header>
+    <div class="wrap">
+      <img class="icon" src="assets/icon.png" alt="Icona My Dojo" />
+      <h1>My Dojo</h1>
+      <p class="tagline">Gestisci il tuo dojo di arti marziali: allievi, gradi, presenze, quote, esami e glossario tecnico, tutto in un'unica app.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>Cosa fa</h2>
+      <p>
+        My Dojo è un'app Android nativa (Kotlin / Jetpack Compose) per la
+        gestione di un dojo di arti marziali — Aikido, Judo, Karate e altre.
+        Tiene in un unico posto gli allievi, i loro gradi e le presenze, le
+        quote associative, l'idoneità agli esami e un glossario tecnico
+        ricercabile. Local-first, con sincronizzazione cloud cifrata opzionale
+        per istruttori e collaboratori.
+      </p>
+    </section>
+
+    <section>
+      <h2>Funzionalità</h2>
+      <div class="grid">
+        <div class="card"><h3>Allievi e gradi</h3><p>Anagrafica completa (contatti, tutore per i minori), catalogo cinture kyu/dan con colori, scadenza certificato medico e data del grado attuale.</p></div>
+        <div class="card"><h3>Calendario e presenze</h3><p>Vista mensile e lista eventi, lezioni ordinarie ed eventi extra (seminari/stage), generazione automatica dallo schedule settimanale e registro presenze.</p></div>
+        <div class="card"><h3>Pagamenti</h3><p>Quota mensile e annuale con calcolo automatico delle scadenze e avvisi per le quote da regolarizzare.</p></div>
+        <div class="card"><h3>Idoneità esami</h3><p>Motore di idoneità basato su presenze (lezioni + seminari) e tempo dall'ultimo grado, con soglie e programma tecnico (+ link video) configurabili dall'amministratore.</p></div>
+        <div class="card"><h3>Glossario</h3><p>Dizionario di termini (termine, kanji, significato, link opzionale) con ricerca istantanea e schede espandibili.</p></div>
+        <div class="card"><h3>Bilingue e sicuro</h3><p>Interfaccia completa in Italiano/Inglese. Keystore hardware, cifratura AES-256-GCM a livello di campo e isolamento multi-tenant (RLS) per il cloud.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Screenshot</h2>
+      <div class="shots">
+        <figure>
+          <img src="screenshots/01-onboarding.png" alt="Benvenuto / configura il tuo dojo" />
+          <figcaption>Benvenuto — configura il tuo dojo</figcaption>
+        </figure>
+        <figure>
+          <img src="screenshots/02-setup.png" alt="Informazioni dojo: nome, logo, disciplina, tema" />
+          <figcaption>Informazioni dojo: nome, logo, disciplina, tema</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Come iniziare</h2>
+      <ol class="steps">
+        <li>Apri My Dojo e tocca <strong>Crea un nuovo dojo</strong> (oppure unisciti a uno esistente).</li>
+        <li>Inserisci il nome del dojo, scegli la disciplina e, se vuoi, aggiungi un logo e i colori del tema.</li>
+        <li>Aggiungi gli allievi con gradi, contatti e date del certificato medico.</li>
+        <li>Imposta lo schedule settimanale; lezioni e presenze vengono generate per il calendario.</li>
+        <li>Tieni traccia delle quote e controlla l'idoneità agli esami man mano che gli allievi si allenano.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Privacy e sicurezza</h2>
+      <div class="note">
+        <ul>
+          <li>Local-first: tutti i dati appartengono all'amministratore del dojo. Nessuna analitica, nessuna pubblicità, nessun tracciamento.</li>
+          <li>I campi sensibili (email, telefoni, contatti dei tutori, note) sono cifrati sul dispositivo con AES-256-GCM.</li>
+          <li>Sincronizzazione cloud opzionale (Supabase) su HTTPS/TLS con row-level security e claim JWT firmati.</li>
+          <li>Certificati medici: viene registrata solo la data di scadenza, mai referti o diagnosi.</li>
+        </ul>
+        <p style="margin-top:1rem;"><a href="privacy.it.html">Leggi l'informativa completa</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a href="privacy.it.html">Informativa sulla privacy</a>
+      <p>&copy; My Dojo</p>
+    </div>
+  </footer>
+</body>
+</html>

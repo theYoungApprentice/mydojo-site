@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Dojo — Norme sulla Privacy</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 4rem; line-height: 1.6; }
+    h1 { font-size: 1.7rem; } h2 { font-size: 1.2rem; margin-top: 2rem; }
+    .updated { color: #888; font-size: 0.9rem; }
+    .back { display: inline-block; margin-bottom: 1rem; }
+    .lang { float: right; font-size: 0.9rem; }
+    code { background: rgba(46,93,75,0.12); padding: 0.1em 0.35em; border-radius: 4px; font-size: 0.9em; }
+    a { color: #2E5D4B; }
+    @media (prefers-color-scheme: dark) { a { color: #7fc3a6; } }
+  </style>
+</head>
+<body>
+  <span class="lang"><a href="privacy.html">EN</a> · <strong>IT</strong></span>
+  <a class="back" href="index.it.html">&larr; Torna a My Dojo</a>
+
+    <h1>Norme sulla Privacy — My Dojo</h1>
+    <p class="updated">Ultimo aggiornamento: 2026-11-02 · Package: <code>com.youngapprentice.mydojo</code></p>
+
+    <p>
+      <strong>My Dojo</strong> ("l'app") è un'applicazione Android con architettura local-first
+      per la gestione di un dojo di arti marziali (anagrafica allievi, gradi,
+      calendario lezioni, presenze, quote associative, idoneità agli esami e
+      glossario tecnico). Questa informativa spiega come l'app tratta i dati
+      degli utenti, degli allievi e del dispositivo.
+    </p>
+
+    <h2>Riepilogo</h2>
+    <p>
+      My Dojo opera su un'architettura local-first con sincronizzazione cloud opzionale
+      per istruttori e collaboratori del dojo. Tutti i dati inseriti nell'app sono di proprietà
+      esclusiva dell'Amministratore del Dojo (Maestro). Lo sviluppatore non raccoglie, non vende
+      e non monetizza i dati degli utenti. Non sono presenti sistemi di analytics, pubblicità,
+      né tracciamento tra app terze.
+    </p>
+
+    <h2>Dati trattati dall'app</h2>
+    <ul>
+      <li>
+        <strong>Configurazione del dojo:</strong> nome del dojo, disciplina marziale,
+        impostazioni ruoli ed eventuale immagine del logo selezionata dal dispositivo.
+      </li>
+      <li>
+        <strong>Anagrafica allievi (dati personali):</strong> nomi, recapiti (email, telefono),
+        dati del tutore/genitore (per i minori), storico gradi/cinture, registro presenze,
+        stato delle quote associative e scadenze dei certificati medici inseriti dall'amministratore
+        per finalità associative e di idoneità sportiva.
+      </li>
+      <li>
+        <strong>Note tecniche & diario deshi:</strong> valutazioni tecniche e note didattiche riservate.
+      </li>
+    </ul>
+
+    <h2>Sicurezza & Cifratura</h2>
+    <ul>
+      <li>
+        <strong>Keystore hardware:</strong> Le chiavi crittografiche che proteggono il database
+        locale e i token di sessione sono ancorate all'Android Keystore hardware del dispositivo.
+      </li>
+      <li>
+        <strong>Cifratura applicativa client-side:</strong> I recapiti e i dati personali sensibili
+        (email, telefoni, recapiti dei genitori, note riservate) vengono cifrati direttamente sul dispositivo
+        con algoritmo autenticato AES-256-GCM prima della trasmissione o sincronizzazione.
+      </li>
+      <li>
+        <strong>Sicurezza del trasporto:</strong> Tutte le comunicazioni con il backend di
+        sincronizzazione (Supabase) avvengono esclusivamente su canali protetti HTTPS/TLS.
+      </li>
+      <li>
+        <strong>Isolamento multi-tenant e ruoli:</strong> Il database cloud applica Row-Level Security (RLS)
+        e claim JWT firmati digitalmente per garantire che nessun dojo possa mai accedere ai dati di un altro dojo.
+      </li>
+    </ul>
+
+    <h2>Dati dei minori e informazioni sanitarie</h2>
+    <p>
+      <strong>Minori (under 18):</strong> I corsi di arti marziali accolgono frequentemente atleti minorenni.
+      I dati relativi ai minori (nomi, date di nascita, contatti dei genitori) sono inseriti esclusivamente
+      dall'amministratore del dojo ai soli fini dell'organizzazione dei corsi, contatti di emergenza
+      e tesseramento sportivo.
+    </p>
+    <p>
+      <strong>Scadenze certificati medici:</strong> In conformità alla normativa sportiva, l'app consente
+      di registrare la data di scadenza del certificato medico di idoneità non agonistica/agonistica.
+      L'app non tratta referti o diagnosi mediche, limitandosi a monitorare la validità temporale del certificato
+      per la sicurezza dell'atleta.
+    </p>
+
+    <h2>Conservazione e cancellazione dei dati (GDPR)</h2>
+    <p>
+      Gli utenti e gli amministratori hanno il pieno controllo sui propri dati in ogni momento:
+    </p>
+    <ul>
+      <li><strong>Archiviazione locale:</strong> Cancellando i dati dell'app da Android o disinstallandola, tutte le informazioni sul dispositivo vengono distrutte.</li>
+      <li><strong>Cancellazione cloud:</strong> L'Amministratore può eliminare definitivamente il dojo dalle impostazioni dell'app, attivando una cancellazione atomica e irreversibile a cascata di tutti i record remoti.</li>
+      <li><strong>Diritti dell'interessato:</strong> Richieste di accesso o cancellazione possono essere rivolte al titolare del dojo o al contatto dello sviluppatore indicato di seguito.</li>
+    </ul>
+
+    <h2>Servizi terzi</h2>
+    <p>
+      Quando la sincronizzazione cloud è attiva, l'app interagisce con l'infrastruttura <strong>Supabase</strong>
+      (PostgreSQL/PostgREST cloud) quale mero fornitore tecnologico per persistenza e autenticazione OTP/Magic Link.
+      Nessun dato viene ceduto o comunicato a terzi per scopi promozionali.
+    </p>
+
+    <h2>Contatti</h2>
+    <p>
+      Per domande o richieste relative a queste norme sulla privacy, scrivi a:
+      <a href="mailto:lorenz.astroboy@gmail.com">lorenz.astroboy@gmail.com</a>
+    </p>
+
+    <h2>Modifiche</h2>
+    <p>
+      Eventuali aggiornamenti futuri a questa informativa saranno pubblicati su questa pagina.
+    </p>
+  
+</body>
+</html>

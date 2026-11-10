@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Dojo — Privacy Policy</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 4rem; line-height: 1.6; }
+    h1 { font-size: 1.7rem; } h2 { font-size: 1.2rem; margin-top: 2rem; }
+    .updated { color: #888; font-size: 0.9rem; }
+    .back { display: inline-block; margin-bottom: 1rem; }
+    .lang { float: right; font-size: 0.9rem; }
+    code { background: rgba(46,93,75,0.12); padding: 0.1em 0.35em; border-radius: 4px; font-size: 0.9em; }
+    a { color: #2E5D4B; }
+    @media (prefers-color-scheme: dark) { a { color: #7fc3a6; } }
+  </style>
+</head>
+<body>
+  <span class="lang"><strong>EN</strong> · <a href="privacy.it.html">IT</a></span>
+  <a class="back" href="index.html">&larr; Back to My Dojo</a>
+
+    <h1>Privacy Policy — My Dojo</h1>
+    <p class="updated">Last updated: 2026-11-02 · Package: <code>com.youngapprentice.mydojo</code></p>
+
+    <p>
+      <strong>My Dojo</strong> ("the app") is a local-first Android application
+      for managing a martial arts dojo (members, grades, lesson calendar,
+      attendance, membership fees, exam eligibility, and technical glossary).
+      This policy explains how the app handles user, member, and device data.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      My Dojo operates on a local-first architecture with optional cloud
+      synchronization for dojo instructors and collaborators. All business and personal
+      data entered into the app is owned exclusively by the Dojo Administrator (Maestro).
+      The developer does not collect, sell, or monetize user data. There are no
+      analytics SDKs, no advertising SDKs, and no cross-app tracking.
+    </p>
+
+    <h2>Data Processed by the App</h2>
+    <ul>
+      <li>
+        <strong>Dojo configuration:</strong> dojo name, martial arts discipline,
+        role settings, and an optional dojo logo image picked from your device.
+      </li>
+      <li>
+        <strong>Member records (PII):</strong> names, contact details (email, phone),
+        guardian details (for minors), belt/grade history, attendance records,
+        membership fee status, and medical certificate expiration dates entered by the dojo
+        administrator for administrative and sports safety compliance.
+      </li>
+      <li>
+        <strong>Instructor notes & deshi diary:</strong> technical evaluations and private notes.
+      </li>
+    </ul>
+
+    <h2>Security & Encryption</h2>
+    <ul>
+      <li>
+        <strong>Hardware-backed Keystore:</strong> Cryptographic keys protecting the local
+        database and authentication tokens are anchored to the device's hardware-backed
+        Android Keystore.
+      </li>
+      <li>
+        <strong>Field-level Client Encryption:</strong> Sensitive personal identifiers
+        (such as emails, phone numbers, guardian contact information, and personal notes)
+        are encrypted client-side using authenticated AES-256-GCM encryption before
+        transmission or synchronization.
+      </li>
+      <li>
+        <strong>Transport Security:</strong> All communication with backend synchronization
+        services (Supabase) occurs strictly over encrypted HTTPS/TLS connections.
+      </li>
+      <li>
+        <strong>Tenant & Role Isolation:</strong> Cloud storage enforces Row-Level Security (RLS)
+        and cryptographically signed JWT claims to ensure that data belonging to one
+        dojo can never be accessed, queried, or modified by another dojo or unauthorized role.
+      </li>
+    </ul>
+
+    <h2>Children's Data & Health Information</h2>
+    <p>
+      <strong>Minors (Under 18):</strong> Martial arts dojos often instruct minors. Details
+      concerning minors (names, birth dates, guardian contact details) are entered exclusively
+      by the dojo administrator or instructors solely for course organization, emergency contact,
+      and association membership requirements.
+    </p>
+    <p>
+      <strong>Medical Certificate Dates:</strong> In accordance with sports regulations, the app
+      allows tracking the expiration dates of non-agonistic/agonistic medical fitness certificates.
+      The app does not process medical diagnoses or health records; only the certificate validity
+      period is tracked to safeguard athlete safety during training.
+    </p>
+
+    <h2>Data Retention and Deletion (GDPR)</h2>
+    <p>
+      Users and Dojo Administrators retain full control over their data at all times:
+    </p>
+    <ul>
+      <li><strong>Local Storage:</strong> Clearing app storage or uninstalling the app removes all data from the device.</li>
+      <li><strong>Cloud Records:</strong> Dojo Administrators can permanently delete their dojo directly from the application settings, triggering an immediate and atomic cascade deletion of all cloud records across all tables.</li>
+      <li><strong>Subject Rights:</strong> Inquiries or data deletion requests can be addressed directly to the dojo administrator or to the developer contact below.</li>
+    </ul>
+
+    <h2>Third-Party Services</h2>
+    <p>
+      When cloud synchronization is configured, the app communicates with <strong>Supabase</strong>
+      (PostgreSQL/PostgREST cloud infrastructure) strictly as a data processor for backend
+      persistence and authentication (Email OTP/Magic Link). No data is shared with or sold to third parties.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      For questions or requests regarding this privacy policy, contact:
+      <a href="mailto:lorenz.astroboy@gmail.com">lorenz.astroboy@gmail.com</a>
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      Any future updates to this privacy policy will be published on this page.
+    </p>
+  
+</body>
+</html>
