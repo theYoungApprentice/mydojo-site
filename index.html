@@ -72,7 +72,7 @@
     <section>
       <h2>Features</h2>
       <div class="grid">
-        <div class="card"><h3>Members &amp; grades</h3><p>Full member records (contacts, guardian for minors), kyu/dan belt catalog with colors, medical-certificate expiry and current-grade date.</p></div>
+        <div class="card"><h3>Members &amp; grades</h3><p>Member records (name, email), kyu/dan belt catalog with colors, medical-certificate expiry and current-grade date.</p></div>
         <div class="card"><h3>Calendar &amp; attendance</h3><p>Monthly view and event list, regular lessons and extra events (seminars/stages), auto-generated from the weekly schedule, with an attendance register.</p></div>
         <div class="card"><h3>Payments</h3><p>Monthly and yearly fees with automatic due-date calculation and reminders for outstanding fees.</p></div>
         <div class="card"><h3>Exam eligibility</h3><p>An eligibility engine based on attendance (lessons + seminars) and time since the last grade, with admin-configurable thresholds and syllabus (plus video links).</p></div>
@@ -115,7 +115,7 @@
       <div class="note">
         <ul>
           <li>Local-first: all data belongs to the dojo administrator. No analytics, no ads, no tracking.</li>
-          <li>Sensitive fields (emails, phones, guardian contacts, notes) are encrypted client-side with AES-256-GCM.</li>
+          <li>Sensitive fields (names, emails, notes) are encrypted client-side with AES-256-GCM.</li>
           <li>Optional cloud sync (Supabase) over HTTPS/TLS with row-level security and signed JWT claims.</li>
           <li>Medical certificates: only the expiry date is tracked, never diagnoses or health records.</li>
         </ul>

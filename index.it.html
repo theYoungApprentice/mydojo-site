@@ -73,7 +73,7 @@
     <section>
       <h2>Funzionalità</h2>
       <div class="grid">
-        <div class="card"><h3>Allievi e gradi</h3><p>Anagrafica completa (contatti, tutore per i minori), catalogo cinture kyu/dan con colori, scadenza certificato medico e data del grado attuale.</p></div>
+        <div class="card"><h3>Allievi e gradi</h3><p>Anagrafica essenziale (nome, email), catalogo cinture kyu/dan con colori, scadenza certificato medico e data del grado attuale.</p></div>
         <div class="card"><h3>Calendario e presenze</h3><p>Vista mensile e lista eventi, lezioni ordinarie ed eventi extra (seminari/stage), generazione automatica dallo schedule settimanale e registro presenze.</p></div>
         <div class="card"><h3>Pagamenti</h3><p>Quota mensile e annuale con calcolo automatico delle scadenze e avvisi per le quote da regolarizzare.</p></div>
         <div class="card"><h3>Idoneità esami</h3><p>Motore di idoneità basato su presenze (lezioni + seminari) e tempo dall'ultimo grado, con soglie e programma tecnico (+ link video) configurabili dall'amministratore.</p></div>
@@ -116,7 +116,7 @@
       <div class="note">
         <ul>
           <li>Local-first: tutti i dati appartengono all'amministratore del dojo. Nessuna analitica, nessuna pubblicità, nessun tracciamento.</li>
-          <li>I campi sensibili (email, telefoni, contatti dei tutori, note) sono cifrati sul dispositivo con AES-256-GCM.</li>
+          <li>I campi sensibili (nomi, email, note) sono cifrati sul dispositivo con AES-256-GCM.</li>
           <li>Sincronizzazione cloud opzionale (Supabase) su HTTPS/TLS con row-level security e claim JWT firmati.</li>
           <li>Certificati medici: viene registrata solo la data di scadenza, mai referti o diagnosi.</li>
         </ul>
